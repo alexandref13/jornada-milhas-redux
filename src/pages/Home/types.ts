@@ -3,7 +3,7 @@ import { RootStackParamList } from 'src/routes';
 import { Usuario } from 'src/types/usuario';
 import { TipoViagem } from 'src/types/viagem';
 
-export interface Filtros {
+export type Filtros = {
   tipo?: TipoViagem;
   pessoas: 1 | 2 | 3;
   origem: string;
@@ -13,7 +13,6 @@ export interface Filtros {
   dataVolta?: string;
 }
 
-export interface HomeProps
-  extends DrawerScreenProps<RootStackParamList, 'Home'> {
+export type HomeProps = {
   usuarioLogado: Usuario | undefined;
-}
+} & DrawerScreenProps<RootStackParamList, 'Home'>
