@@ -4,7 +4,6 @@ import { Button, Card, Checkbox, TextInput, Title } from 'react-native-paper';
 
 import { Genero, Usuario } from 'src/types/usuario';
 import { CadastrarProps } from './types';
-import { cadastrarUsuario } from 'src/services/usuarios';
 
 import banner from 'assets/cadastrar/banner.png';
 import DatePicker from 'src/components/DatePicker';
@@ -12,8 +11,10 @@ import useSnackbar from 'src/contexts/Snackbar';
 
 import styles from './styles';
 import GenderPicker from 'src/components/GenderPicker';
+import { useDispatch } from 'react-redux';
+import { signIn } from 'src/reducers/UserReducer';
 
-export default function Cadastrar({ setUsuarioLogado, navigation }: CadastrarProps) {
+export default function Cadastrar({ navigation }: CadastrarProps) {
   const [nome, setNome] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
   const [genero, setGenero] = useState<Genero | undefined>();
@@ -28,8 +29,11 @@ export default function Cadastrar({ setUsuarioLogado, navigation }: CadastrarPro
   const [leu, setLeu] = useState(false);
   const { criarMensagem } = useSnackbar();
 
+  const dispatch = useDispatch();
+
   const handleSubmit = () => {
-    if (!leu) return criarMensagem.erro('Você deve concordar com os termos de uso');
+    if (!leu)
+      return criarMensagem.erro('Você deve concordar com os termos de uso');
     if (!nome) return criarMensagem.erro('Campo nome é obrigatório');
 
     const novoUsuario: Omit<Usuario, 'id'> = {
@@ -41,14 +45,14 @@ export default function Cadastrar({ setUsuarioLogado, navigation }: CadastrarPro
       cidade,
       estado,
       email,
-      senha
-    }
+      senha,
+    };
 
-    const usuarioCadastrado = cadastrarUsuario(novoUsuario);
-    setUsuarioLogado(usuarioCadastrado);
+    dispatch(signIn(novoUsuario));
+
     criarMensagem.sucesso('Cadastro efetuado com sucesso!');
     navigation.navigate('Home');
-  }
+  };
 
   return (
     <ScrollView>
@@ -57,78 +61,78 @@ export default function Cadastrar({ setUsuarioLogado, navigation }: CadastrarPro
         <Title> Crie sua conta </Title>
         <View style={styles.form}>
           <TextInput
-            label='Nome completo'
-            mode='outlined'
+            label="Nome completo"
+            mode="outlined"
             value={nome}
             onChangeText={setNome}
           />
           <DatePicker
-            label='Data de nascimento'
+            label="Data de nascimento"
             value={dataNascimento}
             onChangeText={setDataNascimento}
           />
           <GenderPicker value={genero} onChange={setGenero} />
           <TextInput
-            label='CPF'
-            placeholder='Digite seu CPF'
-            mode='outlined'
+            label="CPF"
+            placeholder="Digite seu CPF"
+            mode="outlined"
             value={cpf}
             onChangeText={setCpf}
             style={styles.input}
           />
           <TextInput
-            label='Telefone'
-            placeholder='+XX XXXXX-XXXX'
-            mode='outlined'
+            label="Telefone"
+            placeholder="+XX XXXXX-XXXX"
+            mode="outlined"
             value={telefone}
             onChangeText={setTelefone}
             style={styles.input}
           />
           <TextInput
-            label='Cidade'
-            placeholder='Digite sua cidade'
-            mode='outlined'
+            label="Cidade"
+            placeholder="Digite sua cidade"
+            mode="outlined"
             value={cidade}
             onChangeText={setCidade}
             style={styles.input}
           />
           <TextInput
-            label='Estado'
-            placeholder='Digite seu estado'
-            mode='outlined'
+            label="Estado"
+            placeholder="Digite seu estado"
+            mode="outlined"
             value={estado}
             onChangeText={setEstado}
             style={styles.input}
           />
           <TextInput
-            label='Email'
-            placeholder='Digite seu email'
+            label="Email"
+            placeholder="Digite seu email"
             value={email}
             onChangeText={setEmail}
-            mode='outlined'
+            mode="outlined"
             style={styles.input}
           />
           <TextInput
-            label='Confirmar email'
-            placeholder='Digite seu email novamente'
-            mode='outlined'
+            label="Confirmar email"
+            placeholder="Digite seu email novamente"
+            mode="outlined"
             value={confirmarEmail}
             onChangeText={setConfirmarEmail}
             style={styles.input}
           />
           <TextInput
-            label='Senha'
-            mode='outlined'
-            placeholder='Digite sua senha'
+            label="Senha"
+            mode="outlined"
+            placeholder="Digite sua senha"
             value={senha}
             onChangeText={setSenha}
             style={styles.input}
             secureTextEntry
           />
           <TextInput
-            mode='outlined'
-            label='Confirmar senha'
-            placeholder='Repita sua senha'
+            mode="outlined"
+            label="Confirmar senha"
+            placeholder="Repita sua senha"
             value={confirmarSenha}
             onChangeText={setConfirmarSenha}
             style={styles.input}
@@ -136,15 +140,15 @@ export default function Cadastrar({ setUsuarioLogado, navigation }: CadastrarPro
           />
           <Pressable onPress={() => setLeu(!leu)}>
             <View style={styles.termosContainer}>
-              <Checkbox status={leu ? 'checked' : 'unchecked'}/>
+              <Checkbox status={leu ? 'checked' : 'unchecked'} />
               <Text> Li e aceito os termos e condições deste cadastro </Text>
             </View>
           </Pressable>
-          <Button mode='contained' onPress={handleSubmit}>
+          <Button mode="contained" onPress={handleSubmit}>
             Criar minha conta
           </Button>
         </View>
       </Card>
     </ScrollView>
-  )
+  );
 }
