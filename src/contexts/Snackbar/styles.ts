@@ -3,16 +3,16 @@ import theme from 'src/config/theme';
 
 const styles = StyleSheet.create({
   error: {
-    backgroundColor: theme.colors.error
+    backgroundColor: theme.colors.error,
   },
   info: {
-    backgroundColor: theme.colors.info
+    backgroundColor: theme.colors.info,
   },
   success: {
-    backgroundColor: theme.colors.success
+    backgroundColor: theme.colors.success,
   },
   warning: {
-    backgroundColor: theme.colors.warning
+    backgroundColor: theme.colors.warning,
   },
 });
 

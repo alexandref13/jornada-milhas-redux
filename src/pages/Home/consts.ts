@@ -8,4 +8,4 @@ export const valoresPadrao: Filtros = {
   dataIda: undefined,
   dataVolta: undefined,
   filtrarPorUsuario: 'todas',
-}
+};

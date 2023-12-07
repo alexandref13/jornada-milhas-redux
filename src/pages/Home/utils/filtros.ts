@@ -1,17 +1,17 @@
-import { Viagem } from "src/types/viagem";
-import { Filtros } from "../types";
+import { Viagem } from 'src/types/viagem';
+import { Filtros } from '../types';
 
 export const filtrarViagens = (
   viagens: Viagem[],
-  filtros: Omit<Filtros, "pessoas">,
+  filtros: Omit<Filtros, 'pessoas'>,
   cidadeUsuario: string,
-  estadoUsuario: string
+  estadoUsuario: string,
 ): Promise<Viagem[]> => {
-  const viagensFiltradas = viagens.filter((viagem) => {
+  const viagensFiltradas = viagens.filter(viagem => {
     const filtroPorCidade =
-      filtros.filtrarPorUsuario !== "cidade" || viagem.origem === cidadeUsuario;
+      filtros.filtrarPorUsuario !== 'cidade' || viagem.origem === cidadeUsuario;
     const filtroPorEstado =
-      filtros.filtrarPorUsuario !== "estado" ||
+      filtros.filtrarPorUsuario !== 'estado' ||
       viagem.estadoOrigem === estadoUsuario;
     const filtroOrigem =
       !filtros.origem ||
@@ -35,8 +35,8 @@ export const filtrarViagens = (
       filtroDataVolta
     );
   });
-  return new Promise((resolve) =>
-    setTimeout(() => resolve(viagensFiltradas), 1000)
+  return new Promise(resolve =>
+    setTimeout(() => resolve(viagensFiltradas), 1000),
   );
 };
 
@@ -51,6 +51,6 @@ export const filtrosEstaoVazios = ({
   !tipo &&
   !origem &&
   !destino &&
-  filtrarPorUsuario === "todas" &&
+  filtrarPorUsuario === 'todas' &&
   !dataIda &&
   !dataVolta;

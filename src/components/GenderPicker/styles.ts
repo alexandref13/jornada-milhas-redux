@@ -3,7 +3,7 @@ import theme from 'src/config/theme';
 
 const styles = StyleSheet.create({
   tipo: {
-    color: theme.colors.primary
+    color: theme.colors.primary,
   },
   checkboxContainer: {
     alignItems: 'center',

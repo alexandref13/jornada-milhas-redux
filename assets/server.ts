@@ -1,115 +1,115 @@
-import atacama from "./viagens/atacama.png";
-import veneza from "./viagens/veneza.png";
-import patagonia from "./viagens/patagonia.png";
-import grandCanyon from "./viagens/grandCanyon.png";
-import turquia from "./viagens/turquia.png";
-import cordilheiraDosAndes from "./viagens/cordilheiraDosAndes.png";
-import novaYork from "./viagens/novaYork.png";
-import bonito from "./viagens/bonito.png";
-import toronto from "./viagens/toronto.png";
-import viena from "./viagens/viena.png";
-import salvador from "./viagens/salvador.png";
-import arraialDoCabo from "./viagens/arraialDoCabo.png";
-import tokyo from "./viagens/tokyo.png";
-import recife from "./viagens/recife.png";
-import cusco from "./viagens/cusco.png";
-import sidney from "./viagens/sidney.png";
-import bangkok from "./viagens/bangkok.png";
-import paris from "./viagens/paris.png";
-import amsterda from "./viagens/amsterda.png";
-import cidadeDoMexico from "./viagens/cidadeDoMexico.png";
-import madrid from "./viagens/madrid.png";
-import losAngeles from "./viagens/losAngeles.png";
-import lisboa from "./viagens/lisboa.png";
+import atacama from './viagens/atacama.png';
+import veneza from './viagens/veneza.png';
+import patagonia from './viagens/patagonia.png';
+import grandCanyon from './viagens/grandCanyon.png';
+import turquia from './viagens/turquia.png';
+import cordilheiraDosAndes from './viagens/cordilheiraDosAndes.png';
+import novaYork from './viagens/novaYork.png';
+import bonito from './viagens/bonito.png';
+import toronto from './viagens/toronto.png';
+import viena from './viagens/viena.png';
+import salvador from './viagens/salvador.png';
+import arraialDoCabo from './viagens/arraialDoCabo.png';
+import tokyo from './viagens/tokyo.png';
+import recife from './viagens/recife.png';
+import cusco from './viagens/cusco.png';
+import sidney from './viagens/sidney.png';
+import bangkok from './viagens/bangkok.png';
+import paris from './viagens/paris.png';
+import amsterda from './viagens/amsterda.png';
+import cidadeDoMexico from './viagens/cidadeDoMexico.png';
+import madrid from './viagens/madrid.png';
+import losAngeles from './viagens/losAngeles.png';
+import lisboa from './viagens/lisboa.png';
 
-import uuid from "react-native-uuid";
-import { Usuario } from "src/types/usuario";
-import { TipoViagem, Viagem } from "src/types/viagem";
+import uuid from 'react-native-uuid';
+import { Usuario } from 'src/types/usuario';
+import { TipoViagem, Viagem } from 'src/types/viagem';
 
 const server: { usuarios: Usuario[]; viagens: Viagem[] } = {
   usuarios: [
     {
       id: uuid.v4(),
-      nome: "Luiz Fernando",
-      dataNascimento: "01/01/2020",
-      cpf: "111.222.333-44",
+      nome: 'Luiz Fernando',
+      dataNascimento: '01/01/2020',
+      cpf: '111.222.333-44',
       genero: 'Masculino',
-      telefone: "010203040",
-      cidade: "Belo Horizonte",
-      estado: "Minas Gerais",
-      email: "luiz@gmail.com",
-      senha: "123",
+      telefone: '010203040',
+      cidade: 'Belo Horizonte',
+      estado: 'Minas Gerais',
+      email: 'luiz@gmail.com',
+      senha: '123',
     },
   ],
   viagens: [
     {
-      titulo: "Atravesse o Deserto no Chile",
+      titulo: 'Atravesse o Deserto no Chile',
       valor: 3769,
       foto: atacama,
-      dataIda: "23/09/2025",
-      dataVolta: "30/09/2025",
-      origem: "Rio Branco",
+      dataIda: '23/09/2025',
+      dataVolta: '30/09/2025',
+      origem: 'Rio Branco',
       estadoOrigem: 'Acre',
-      destino: "Atacama",
+      destino: 'Atacama',
       tipo: TipoViagem.ida,
     },
     {
-      titulo: "Navegue pelos canais de Veneza",
-      valor: 4638.90,
+      titulo: 'Navegue pelos canais de Veneza',
+      valor: 4638.9,
       foto: veneza,
-      dataIda: "13/07/2025",
-      dataVolta: "23/07/2025",
-      origem: "Maceió",
+      dataIda: '13/07/2025',
+      dataVolta: '23/07/2025',
+      origem: 'Maceió',
       estadoOrigem: 'Alagoas',
-      destino: "Veneza",
+      destino: 'Veneza',
       tipo: TipoViagem.idaEVolta,
     },
     {
-      titulo: "Conheça a Terra do Fogo",
-      valor: 5769.50,
+      titulo: 'Conheça a Terra do Fogo',
+      valor: 5769.5,
       foto: patagonia,
-      dataIda: "03/04/2025",
-      dataVolta: "13/04/2025",
-      origem: "Fortaleza",
+      dataIda: '03/04/2025',
+      dataVolta: '13/04/2025',
+      origem: 'Fortaleza',
       estadoOrigem: 'Ceará',
-      destino: "Patagonia",
+      destino: 'Patagonia',
       tipo: TipoViagem.ida,
     },
     {
-      titulo: "Aprecie milhões de anos de história geológica",
+      titulo: 'Aprecie milhões de anos de história geológica',
       valor: 5837.53,
       foto: grandCanyon,
-      dataIda: "06/08/2025",
-      dataVolta: "26/08/2025",
-      origem: "Cuiabá",
+      dataIda: '06/08/2025',
+      dataVolta: '26/08/2025',
+      origem: 'Cuiabá',
       estadoOrigem: 'Mato Grosso',
-      destino: "Grand Canyon",
+      destino: 'Grand Canyon',
       tipo: TipoViagem.idaEVolta,
     },
     {
-      titulo: "Conheça a Turquia",
+      titulo: 'Conheça a Turquia',
       valor: 1000,
       foto: turquia,
-      dataIda: "09/09/2024",
-      dataVolta: "12/09/2024",
-      origem: "Belo Horizonte",
+      dataIda: '09/09/2024',
+      dataVolta: '12/09/2024',
+      origem: 'Belo Horizonte',
       estadoOrigem: 'Minas Gerais',
-      destino: "Turquia",
+      destino: 'Turquia',
       tipo: TipoViagem.ida,
     },
     {
-      titulo: "Visite a impressionante Cordilheira dos Andes",
+      titulo: 'Visite a impressionante Cordilheira dos Andes',
       valor: 2946,
       foto: cordilheiraDosAndes,
-      dataIda: "19/11/2025",
-      dataVolta: "04/12/2025",
-      origem: "Palmas",
+      dataIda: '19/11/2025',
+      dataVolta: '04/12/2025',
+      origem: 'Palmas',
       estadoOrigem: 'Tocantins',
-      destino: "La paz",
+      destino: 'La paz',
       tipo: TipoViagem.idaEVolta,
     },
     {
-      titulo: "1 semana em Nova York",
+      titulo: '1 semana em Nova York',
       valor: 1550,
       foto: novaYork,
       dataIda: '12/06/2023',

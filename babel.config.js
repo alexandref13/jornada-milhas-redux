@@ -20,10 +20,10 @@ module.exports = function (api) {
           alias: {
             '@components': './src/components',
             '@pages': './src/pages',
-          }
-        }
+          },
+        },
       ],
-      'react-native-reanimated/plugin'
+      'react-native-reanimated/plugin',
     ],
     env: {
       production: {

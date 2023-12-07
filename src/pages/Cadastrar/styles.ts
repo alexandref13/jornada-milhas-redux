@@ -4,18 +4,18 @@ import theme from 'src/config/theme';
 const styles = StyleSheet.create({
   banner: {
     height: 100,
-    width: '100%'
+    width: '100%',
   },
   card: {
     marginHorizontal: 10,
     marginVertical: 20,
-    padding: 20
+    padding: 20,
   },
   form: {
     gap: 10,
   },
   tipo: {
-    color: theme.colors.primary
+    color: theme.colors.primary,
   },
   checkboxContainer: {
     alignItems: 'center',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   input: {
-    flex: 1
+    flex: 1,
   },
   termosContainer: {
     alignItems: 'center',

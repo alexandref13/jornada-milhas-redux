@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -27,10 +25,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-build-properties",
-      "expo-community-flipper"
-    ],
+    "plugins": ["expo-build-properties", "expo-community-flipper"],
     "extra": {
       "eas": {
         "projectId": "bc7776ff-e2cb-43e4-902b-14f841d81291"

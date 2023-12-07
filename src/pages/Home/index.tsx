@@ -121,8 +121,8 @@ export default function Home({ usuarioLogado }: HomeProps) {
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View style={styles.imageContainer}>
+      <ScrollView>  
+          <View style={styles.imageContainer}>
           <Image source={banner} style={styles.bannerImage} />
         </View>
         <View style={styles.content}>

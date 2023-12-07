@@ -4,18 +4,16 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
     justifyContent: 'space-between',
-    paddingHorizontal: 40
+    paddingHorizontal: 40,
   },
   logo: {
     height: 40,
     width: 40,
   },
-  login: {
-
-  },
+  login: {},
   drawer: {
-    backgroundColor: 'red'
-  }
-})
+    backgroundColor: 'red',
+  },
+});
 
 export default styles;
