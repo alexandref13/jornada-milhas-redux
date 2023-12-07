@@ -40,6 +40,18 @@ const server: { usuarios: Usuario[]; viagens: Viagem[] } = {
       email: 'luiz@gmail.com',
       senha: '123',
     },
+    {
+      id: uuid.v4(),
+      nome: 'Alexandre Fernandes',
+      dataNascimento: '02/08/1999',
+      cpf: '111.222.333-44',
+      genero: 'Masculino',
+      telefone: '010203040',
+      cidade: 'Ananindeua',
+      estado: 'Pará',
+      email: 'alexandre@gmail.com',
+      senha: '123',
+    },
   ],
   viagens: [
     {
